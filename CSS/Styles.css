@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* Welcome Page */
+#welcome {
+    background: linear-gradient(135deg, #6F4E37 0%, #8B4513 100%);
+}
+
+h1 {
+    color: #F5E6D3;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.btn {
+    background-color: #2D5016;
+    color: #F5E6D3;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    background-color: #3A6B1E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.4);
+}
+
+/* Kitchen Pages */
+.kitchen-page {
+    background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%);
+}
+
+h2 {
+    color: #F5E6D3;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.options-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    min-width: 150px;
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+
+.cup, .glass {
+    width: 120px;
+    height: 140px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.espresso-cup, .americano-cup, .decaf-cup {
+    width: 100px;
+    height: 80px;
+    background-color: #3E2723;
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    border: 4px solid #F5E6D3;
+}
+
+.espresso-cup::before, .americano-cup::before, .decaf-cup::before {
+    content: '';
+    position: absolute;
+    right: -35px;
+    top: 15px;
+    width: 30px;
+    height: 40px;
+    border: 4px solid #F5E6D3;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+}
+
+.espresso-cup::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 40px;
+    background-color: #1a0f0a;
+    border-radius: 0 0 10px 10px;
+}
+
+.americano-cup::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 50px;
+    background-color: #2d1810;
+    border-radius: 0 0 10px 10px;
+}
+
+.decaf-cup::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 45px;
+    background-color: #3E2723;
+    border-radius: 0 0 10px 10px;
+}
+
+.cold-brew-glass {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+    border: 3px solid #F5E6D3;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cold-brew-glass::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background-color: #1a0f0a;
+}
+
+.milk-container, .syrup-bottle, .sweetener-jar, .topping-jar {
+    width: 80px;
+    height: 100px;
+    background-color: #F5E6D3;
+    border: 3px solid #6F4E37;
+    border-radius: 5px 5px 10px 10px;
+    position: relative;
+}
+
+.milk-container::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    background-color: #6F4E37;
+    border-radius: 5px 5px 0 0;
+}
+
+.label {
+    background-color: #F5E6D3;
+    color: #3E2723;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Final Drink Page */
+.final-drink {
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.final-drink:active {
+    transform: scale(0.95);
+}
+
+.drink-display {
+    width: 200px;
+    height: 240px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.final-cup {
+    width: 160px;
+    height: 140px;
+    background-color: #F5E6D3;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    border: 5px solid #6F4E37;
+    overflow: hidden;
+}
+
+.final-cup::before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: 20px;
+    width: 45px;
+    height: 60px;
+    border: 5px solid #6F4E37;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+}
+
+.final-glass {
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+    border: 4px solid #F5E6D3;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.drink-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: height 0.3s;
+}
+
+.sips-left {
+    color: #F5E6D3;
+    font-size: 1.2em;
+    margin-top: 20px;
+}

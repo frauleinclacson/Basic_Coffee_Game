@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Mixing Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome" class="page active">
+        <h1>Hey there Barista!<br>Are you ready?</h1>
+        <button class="btn" onclick="nextPage()">Yes, I am!</button>
+    </div>
+
+    <!-- Coffee Base Selection -->
+    <div id="base" class="page kitchen-page">
+        <h2>Choose Your Coffee Base</h2>
+        <div class="options-container">
+            <div class="option" onclick="selectBase('espresso', false)">
+                <div class="cup">
+                    <div class="espresso-cup"></div>
+                </div>
+                <div class="label">Espresso</div>
+            </div>
+            <div class="option" onclick="selectBase('americano', false)">
+                <div class="cup">
+                    <div class="americano-cup"></div>
+                </div>
+                <div class="label">Americano</div>
+            </div>
+            <div class="option" onclick="selectBase('cold brew', true)">
+                <div class="glass">
+                    <div class="cold-brew-glass"></div>
+                </div>
+                <div class="label">Cold Brew</div>
+            </div>
+            <div class="option" onclick="selectBase('decaf', false)">
+                <div class="cup">
+                    <div class="decaf-cup"></div>
+                </div>
+                <div class="label">Decaf Coffee</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milk/Cream Selection -->
+    <div id="milk" class="page kitchen-page">
+        <h2>Choose Your Milk or Cream</h2>
+        <div class="options-container">
+            <div class="option" onclick="selectOption('milk', 'steamed milk')">
+                <div class="milk-container"></div>
+                <div class="label">Steamed Milk</div>
+            </div>
+            <div class="option" onclick="selectOption('milk', 'milk foam')">
+                <div class="milk-container"></div>
+                <div class="label">Milk Foam</div>
+            </div>
+            <div class="option" onclick="selectOption('milk', 'cold foam')">
+                <div class="milk-container"></div>
+                <div class="label">Cold Foam</div>
+            </div>
+            <div class="option" onclick="selectOption('milk', 'whipped cream')">
+                <div class="milk-container"></div>
+                <div class="label">Whipped Cream</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Syrup Selection -->
+    <div id="syrup" class="page kitchen-page">
+        <h2>Choose Your Flavor Syrup</h2>
+        <div class="options-container">
+            <div class="option" onclick="selectOption('syrup', 'vanilla')">
+                <div class="syrup-bottle"></div>
+                <div class="label">Vanilla</div>
+            </div>
+            <div class="option" onclick="selectOption('syrup', 'caramel')">
+                <div class="syrup-bottle"></div>
+                <div class="label">Caramel</div>
+            </div>
+            <div class="option" onclick="selectOption('syrup', 'chocolate')">
+                <div class="syrup-bottle"></div>
+                <div class="label">Chocolate</div>
+            </div>
+            <div class="option" onclick="selectOption('syrup', 'cinnamon')">
+                <div class="syrup-bottle"></div>
+                <div class="label">Cinnamon</div>
+            </div>
+            <div class="option" onclick="selectOption('syrup', 'peppermint')">
+                <div class="syrup-bottle"></div>
+                <div class="label">Peppermint</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sweetener Selection -->
+    <div id="sweetener" class="page kitchen-page">
+        <h2>Choose Your Sweetener</h2>
+        <div class="options-container">
+            <div class="option" onclick="selectOption('sweetener', 'white sugar')">
+                <div class="sweetener-jar"></div>
+                <div class="label">White Sugar</div>
+            </div>
+            <div class="option" onclick="selectOption('sweetener', 'brown sugar')">
+                <div class="sweetener-jar"></div>
+                <div class="label">Brown Sugar</div>
+            </div>
+            <div class="option" onclick="selectOption('sweetener', 'honey')">
+                <div class="sweetener-jar"></div>
+                <div class="label">Honey</div>
+            </div>
+            <div class="option" onclick="selectOption('sweetener', 'stevia')">
+                <div class="sweetener-jar"></div>
+                <div class="label">Stevia</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toppings Selection -->
+    <div id="toppings" class="page kitchen-page">
+        <h2>Choose Your Toppings</h2>
+        <div class="options-container">
+            <div class="option" onclick="selectOption('toppings', 'cocoa powder')">
+                <div class="topping-jar"></div>
+                <div class="label">Cocoa Powder</div>
+            </div>
+            <div class="option" onclick="selectOption('toppings', 'cinnamon powder')">
+                <div class="topping-jar"></div>
+                <div class="label">Cinnamon Powder</div>
+            </div>
+            <div class="option" onclick="selectOption('toppings', 'chocolate chips')">
+                <div class="topping-jar"></div>
+                <div class="label">Chocolate Chips</div>
+            </div>
+            <div class="option" onclick="selectOption('toppings', 'marshmallows')">
+                <div class="topping-jar"></div>
+                <div class="label">Marshmallows</div>
+            </div>
+            <div class="option" onclick="selectOption('toppings', 'whipped cream')">
+                <div class="topping-jar"></div>
+                <div class="label">Whipped Cream</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Drink Page -->
+    <div id="final" class="page kitchen-page">
+        <h2>Your Coffee is Ready!</h2>
+        <div id="drinkDisplay" class="drink-display final-drink" onclick="sipDrink()"></div>
+        <div class="sips-left" id="sipsLeft"></div>
+        <button class="btn" id="againBtn" style="display: none;" onclick="restart()">Wanna make one again?</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
