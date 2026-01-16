@@ -217,7 +217,7 @@ h2 {
 
 .drink-display {
     width: 200px;
-    height: 240px;
+    height: 280px;
     position: relative;
     margin-bottom: 30px;
 }
@@ -229,7 +229,7 @@ h2 {
     border-radius: 0 0 20px 20px;
     position: relative;
     border: 5px solid #6F4E37;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .final-cup::before {
@@ -251,7 +251,7 @@ h2 {
     border: 4px solid #F5E6D3;
     border-radius: 8px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .drink-content {
@@ -260,6 +260,8 @@ h2 {
     left: 0;
     right: 0;
     transition: height 0.3s;
+    border-radius: inherit;
+    overflow: hidden;
 }
 
 .sips-left {
@@ -267,3 +269,96 @@ h2 {
     font-size: 1.2em;
     margin-top: 20px;
 }
+
+/* Topping Icons */
+.topping-icon {
+    position: absolute;
+    font-size: 2em;
+    z-index: 10;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.whipped-cream-top {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 50%, #FFF 0%, #F5E6D3 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 5;
+}
+
+.whipped-cream-top::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    width: 25px;
+    height: 25px;
+    background: #FFF;
+    border-radius: 50%;
+}
+
+.whipped-cream-top::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 25%;
+    width: 20px;
+    height: 20px;
+    background: #FFF;
+    border-radius: 50%;
+}
+
+.foam-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: radial-gradient(ellipse at center, #FEFEFE 0%, #F5E6D3 100%);
+    border-radius: 8px 8px 0 0;
+    z-index: 3;
+}
+
+.recipe-summary {
+    background-color: rgba(111, 78, 55, 0.9);
+    color: #F5E6D3;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.recipe-summary h3 {
+    color: #F5E6D3;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.recipe-summary p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.ingredient-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Color coding for different ingredients */
+.syrup-vanilla { color: #F4E4C1; }
+.syrup-caramel { color: #C68E17; }
+.syrup-chocolate { color: #3E2723; }
+.syrup-cinnamon { color: #D2691E; }
+.syrup-peppermint { color: #98FF98; }
